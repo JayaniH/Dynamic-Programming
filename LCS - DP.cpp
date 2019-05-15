@@ -44,7 +44,7 @@ void lcs::claculateLcs(){
 			}else{
 				array[i+1][j+1] = max(array[i][j+1],array[i+1][j]);
 				
-				if(printArray[i][j+1]==3||printArray[i+1][j]==3){
+				if(array[i][j+1] > array[i+1][j]){
 					printArray[i+1][j+1] = 2;
 				}else{
 					printArray[i+1][j+1] = 1;
@@ -64,11 +64,9 @@ void lcs::claculateLcs(){
 				result = result + string1[i-1];
 				//cout<<"\n"<<string1[i-1]<<"\t";
 				i--;
-			}else if(printArray[i][j]==2){		
-				if(printArray[i-1][j]==3){	//If (i,j) is gray and if (i-1,j) is black move to (i-1,j)
+			}else if(printArray[i][j]==2){		//If (i,j) is gray move to (i-1,j)
 					i--;
 					j++;
-				}
 			}
 			// Else loop backwards until a gray is found
 		}
