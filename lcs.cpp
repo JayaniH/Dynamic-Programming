@@ -56,19 +56,16 @@ void LCS::lcs_length(){
 }
 
 void LCS::lcs_print(){
-	char c;
 	int i=n;
 	int j=m;
 	int l=len;
 	while(i>0){
 		while(j>0){
 			if(direction[i][j] == 'd'){
-				//cout<<s1[i-1];
 				str[l-1]=s1[i-1];
 				i--;
 				j--;
 				l--;
-				//cout<<c;
 			}
 			else if(direction[i][j] == 'u'){
 				i=i-1;
