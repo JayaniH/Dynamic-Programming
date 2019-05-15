@@ -77,6 +77,7 @@ void LCS::lcs_print(){
 				j=j-1;
 			}
 		}
+		i--;
 	}
 	
 	cout<<"LCS = ";
@@ -118,7 +119,8 @@ int LCS::max(int x, int y){
 }
 int main(){
 
-	LCS lcs1("abcdefgh","abdhijk");
+	//LCS lcs1("abcdefgh","abdhijk");
+	LCS lcs1("abcdcba","bdcaba");
 	lcs1.lcs_length();
 	lcs1.lcs_print();
 	lcs1.print_direction();
